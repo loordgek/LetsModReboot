@@ -1,8 +1,8 @@
 package com.pahimar.letsmodreboot.block;
 
-public class BlockFlag extends BlockLMRB
+public class Blocktank extends BlockLMRB
 {
-    public BlockFlag()
+    public Blocktank()
     {
         super();
         this.setBlockName("flag");
