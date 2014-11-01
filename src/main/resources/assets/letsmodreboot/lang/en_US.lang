@@ -1,4 +1,15 @@
 item.letsmodreboot:mapleLeaf.name=Maple Leaf of Awesomeness
 item.letsmodreboot:dust.name=dust
+item.letsmodreboot:ore.Iron.name=iron dust
+item.letsmodreboot:ore.Gold.name=gold dust
+item.letsmodreboot:ore.Copper.name=Copper dust
+item.letsmodreboot:ore.Lead.name=Lead dust
+item.letsmodreboot:ore.Nickel.name=Nickel dust
+item.letsmodreboot:ore.Platinum.name=Platinum dust
+item.letsmodreboot:ore.Silver.name=Silver dust
+item.letsmodreboot:ore.Tin.name=Tin dust
+
+
+
 tile.letsmodreboot:flag.name=Canadian Flag of Awesomeness
 itemGroup.letsmodreboot=Let's Mod Reboot

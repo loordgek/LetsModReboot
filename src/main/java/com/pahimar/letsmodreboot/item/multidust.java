@@ -3,6 +3,7 @@ package com.pahimar.letsmodreboot.item;
 import com.pahimar.letsmodreboot.init.ModItems;
 import com.pahimar.letsmodreboot.reference.Colors;
 import com.pahimar.letsmodreboot.reference.Names;
+import com.pahimar.letsmodreboot.reference.Textures;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.creativetab.CreativeTabs;
@@ -16,22 +17,22 @@ import java.util.List;
 /**
  * Created by stefan on 30-10-2014.
  */
-public class test extends ItemLMRB{
+public class multidust extends ItemLMRB{
 
-    public test(){
+    public multidust(){
         super();
         this.setHasSubtypes(true);
         this.setUnlocalizedName(Names.Items.multidust);
 
 }
-    public static List<ItemStack> getAlchemicalDusts()
+    public static List<ItemStack> getmultidust()
     {
-        List<ItemStack> alchemicalDustStacks = new ArrayList<ItemStack>();
+        List<ItemStack> multidustStacks = new ArrayList<ItemStack>();
         for (int meta = 0; meta < Names.Items.dust.length; meta++)
         {
-            alchemicalDustStacks.add(new ItemStack(ModItems., 1, meta));
+            multidustStacks.add(new ItemStack(ModItems.multidust, 1, meta));
         }
-        return alchemicalDustStacks;
+        return multidustStacks;
     }
     @Override
     @SideOnly(Side.CLIENT)
@@ -51,7 +52,7 @@ public class test extends ItemLMRB{
         }
         else if (itemStack.getItemDamage() == 3)
         {
-            return Integer.parseInt(Colors.Lead 16);
+            return Integer.parseInt(Colors.Lead, 16);
         }
          else if (itemStack.getItemDamage() == 4)
         {
