@@ -17,22 +17,22 @@ import java.util.List;
 /**
  * Created by stefan on 30-10-2014.
  */
-public class multidust extends ItemLMRB{
+public class tinypile extends ItemLMRB{
 
-    public multidust(){
+    public tinypile(){
         super();
         this.setHasSubtypes(true);
-        this.setUnlocalizedName(Names.Items.multidust);
+        this.setUnlocalizedName(Names.Items.tinypile);
 
 }
-    public static List<ItemStack> getmultidust()
+    public static List<ItemStack> gettinypile()
     {
-        List<ItemStack> multidustStacks = new ArrayList<ItemStack>();
+        List<ItemStack> tinypileStacks = new ArrayList<ItemStack>();
         for (int meta = 0; meta < Names.Items.dust.length; meta++)
         {
-            multidustStacks.add(new ItemStack(ModItems.multidust, 1, meta));
+            tinypileStacks.add(new ItemStack(ModItems.tinypile, 1, meta));
         }
-        return multidustStacks;
+        return tinypileStacks;
     }
     @Override
     @SideOnly(Side.CLIENT)
@@ -75,12 +75,12 @@ public class multidust extends ItemLMRB{
     @Override
     public String getUnlocalizedName()
     {
-        return String.format("item.%s%s", Textures.RESOURCE_PREFIX, Names.Items.multidust);
+        return String.format("item.%s%s", Textures.RESOURCE_PREFIX, Names.Items.tinypile);
     }
     @Override
     public String getUnlocalizedName(ItemStack itemStack)
     {
-        return String.format("item.%s%s.%s", Textures.RESOURCE_PREFIX, Names.Items.multidust, Names.Items.dust[MathHelper.clamp_int(itemStack.getItemDamage(), 0, Names.Items.dust.length - 1)]);
+        return String.format("item.%s%s.%s", Textures.RESOURCE_PREFIX, Names.Items.tinypile, Names.Items.dust[MathHelper.clamp_int(itemStack.getItemDamage(), 0, Names.Items.dust.length - 1)]);
     }
     @Override
     @SideOnly(Side.CLIENT)
