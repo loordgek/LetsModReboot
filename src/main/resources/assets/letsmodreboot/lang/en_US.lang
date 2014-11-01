@@ -1,13 +1,13 @@
 item.letsmodreboot:mapleLeaf.name=Maple Leaf of Awesomeness
 item.letsmodreboot:dust.name=dust
-item.letsmodreboot:ore.Iron.name=iron dust
-item.letsmodreboot:ore.Gold.name=gold dust
-item.letsmodreboot:ore.Copper.name=Copper dust
-item.letsmodreboot:ore.Lead.name=Lead dust
-item.letsmodreboot:ore.Nickel.name=Nickel dust
-item.letsmodreboot:ore.Platinum.name=Platinum dust
-item.letsmodreboot:ore.Silver.name=Silver dust
-item.letsmodreboot:ore.Tin.name=Tin dust
+item.letsmodreboot:tinypile.Iron.name=iron dust
+item.letsmodreboot:tinypile.Gold.name=gold dust
+item.letsmodreboot:tinypile.Copper.name=Copper dust
+item.letsmodreboot:tinypile.Lead.name=Lead dust
+item.letsmodreboot:tinypile.Nickel.name=Nickel dust
+item.letsmodreboot:tinypile.Platinum.name=Platinum dust
+item.letsmodreboot:tinypile.Silver.name=Silver dust
+item.letsmodreboot:tinypile.Tin.name=Tin dust
 
 
 
