@@ -6,7 +6,7 @@ package com.pahimar.letsmodreboot.reference;
 public class Names {
     public static final class Items
     {
-        public static final String tinypile = "tinypile";
+        public static final String tinypile = "smallpile2";
         public static final String[] dust = {"Iron", "Gold", "Copper", "Lead", "Nickel", "Platinum", "Silver", "Tin"};
     }
 }
