@@ -10,8 +10,5 @@ import net.minecraftforge.oredict.ShapelessOreRecipe;
  */
 public class recipe
 {
-    public static void init()
-    {
-        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(OreDictionary.)));
-    }
+
 }
