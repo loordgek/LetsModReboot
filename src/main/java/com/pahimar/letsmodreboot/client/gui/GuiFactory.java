@@ -1,5 +1,6 @@
 package com.pahimar.letsmodreboot.client.gui;
 
+import com.pahimar.letsmodreboot.client.ModGuiConfig;
 import cpw.mods.fml.client.IModGuiFactory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
