@@ -2,38 +2,38 @@ package com.pahimar.letsmodreboot.tileentity;
 
 
     import com.pahimar.letsmodreboot.Network.Packethandler;
-    import com.pahimar.letsmodreboot.Network.message.MessageTileEntityLRMB;
-    import com.pahimar.letsmodreboot.reference.Names;
-    import net.minecraft.nbt.NBTTagCompound;
-    import net.minecraft.network.Packet;
-    import net.minecraft.tileentity.TileEntity;
-    import net.minecraftforge.common.util.ForgeDirection;
+import com.pahimar.letsmodreboot.Network.message.MessageTileEntityLRMB;
+import com.pahimar.letsmodreboot.reference.Names;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.Packet;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
 
 public class TileEntityLMRB extends TileEntity
 
     {
-        protected ForgeDirection orientation;
+        protected EnumFacing orientation;
         protected byte state;
         protected String customName;
         protected String owner;
         public TileEntityLMRB()
         {
-            orientation = ForgeDirection.SOUTH;
+            orientation = EnumFacing.SOUTH;
             state = 0;
             customName = "";
             owner = "";
         }
-        public ForgeDirection getOrientation()
+        public EnumFacing getOrientation()
         {
             return orientation;
         }
-        public void setOrientation(ForgeDirection orientation)
+        public void setOrientation(EnumFacing orientation)
         {
             this.orientation = orientation;
         }
         public void setOrientation(int orientation)
         {
-            this.orientation = ForgeDirection.getOrientation(orientation);
+            this.orientation = EnumFacing.getFront(orientation);
         }
         public short getState()
         {
@@ -65,7 +65,7 @@ public class TileEntityLMRB extends TileEntity
             super.readFromNBT(nbtTagCompound);
             if (nbtTagCompound.hasKey(Names.NBT.DIRECTION))
             {
-                this.orientation = ForgeDirection.getOrientation(nbtTagCompound.getByte(Names.NBT.DIRECTION));
+                this.orientation = EnumFacing.getFront(nbtTagCompound.getByte(Names.NBT.DIRECTION));
             }
             if (nbtTagCompound.hasKey(Names.NBT.STATE))
             {

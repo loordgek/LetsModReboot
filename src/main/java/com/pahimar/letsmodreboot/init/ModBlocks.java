@@ -1,17 +1,48 @@
 package com.pahimar.letsmodreboot.init;
 
-import com.pahimar.letsmodreboot.block.Blocktank;
+import com.pahimar.letsmodreboot.LetsModReboot;
 import com.pahimar.letsmodreboot.block.BlockLMRB;
+import com.pahimar.letsmodreboot.block.Blockflag;
 import com.pahimar.letsmodreboot.reference.Reference;
-import cpw.mods.fml.common.registry.GameRegistry;
+import com.pahimar.letsmodreboot.utility.ItemBlockWithVariants;
+import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.model.ModelBakery;
+import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
 
 @GameRegistry.ObjectHolder(Reference.MOD_ID)
 public class ModBlocks
 {
-    public static final BlockLMRB flag = new Blocktank();
+
+
+    public static final BlockLMRB flag = new Blockflag();
 
     public static void init()
     {
         GameRegistry.registerBlock(flag, "flag");
+    }
+
+    private static Block registerBlock(BlockLMRB block, String name)
+    {
+        block.setUnlocalizedName(name);
+        if (block.hasPresetProperties())
+        {
+            GameRegistry.registerBlock(block, ItemBlockWithVariants.class, name);
+            for (IBlockState state : block.presetStates)
+            {
+                String stateName = block.getStateName(state, true);
+                ModelBakery.addVariantName(Item.getItemFromBlock(block), Reference.MOD_ID + ":" + stateName);
+                LetsModReboot.comProxy.registerBlockForMeshing(block, block.getMetaFromState(state), stateName);
+            }
+        }
+        else
+        {
+            GameRegistry.registerBlock(block, name);
+            ModelBakery.addVariantName(Item.getItemFromBlock(block), Reference.MOD_ID + ":" + name);
+            LetsModReboot.comProxy.registerBlockForMeshing(block, 0, name);
+        }
+        return block;
     }
 }

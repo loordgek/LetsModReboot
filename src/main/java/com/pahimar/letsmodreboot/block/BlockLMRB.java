@@ -1,18 +1,23 @@
 package com.pahimar.letsmodreboot.block;
 
+import com.google.common.collect.ImmutableSet;
 import com.pahimar.letsmodreboot.creativetab.CreativeTabLMRB;
 import com.pahimar.letsmodreboot.reference.Reference;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import com.pahimar.letsmodreboot.utility.BlockStateUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.state.IBlockState;
 
 public class BlockLMRB extends Block
 {
-    public BlockLMRB(Material material)
+    public ImmutableSet<IBlockState> presetStates;
+
+    protected BlockLMRB(Material material)
     {
         super(material);
+        this.presetStates = BlockStateUtils.getValidStatesForProperties(this.getDefaultState(), this.getPresetProperties());
+
         this.setCreativeTab(CreativeTabLMRB.LMRB_TAB);
     }
 
@@ -27,15 +32,30 @@ public class BlockLMRB extends Block
         return String.format("tile.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
     }
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister)
-    {
-        blockIcon = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
-    }
 
     protected String getUnwrappedUnlocalizedName(String unlocalizedName)
     {
         return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
     }
+    @Override
+    public int damageDropped(IBlockState state)
+    {
+        return this.getMetaFromState(state);
+    }
+    public IProperty[] getPresetProperties()
+    {
+        return null;
+    }
+    public boolean hasPresetProperties()
+    {
+        return getPresetProperties() != null;
+    }
+    public String getStateName(IBlockState state, boolean fullName)
+    {
+        String unlocalizedName = state.getBlock().getUnlocalizedName();
+
+        return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
+    }
+
+
 }

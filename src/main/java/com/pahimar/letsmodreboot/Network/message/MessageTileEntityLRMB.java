@@ -1,12 +1,13 @@
 package com.pahimar.letsmodreboot.Network.message;
 
 import com.pahimar.letsmodreboot.tileentity.TileEntityLMRB;
-import cpw.mods.fml.client.FMLClientHandler;
-import cpw.mods.fml.common.network.simpleimpl.IMessage;
-import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
-import cpw.mods.fml.common.network.simpleimpl.MessageContext;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.BlockPos;
+import net.minecraftforge.fml.client.FMLClientHandler;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
+import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
 public class MessageTileEntityLRMB implements IMessage, IMessageHandler<MessageTileEntityLRMB, IMessage>
 {
@@ -18,9 +19,9 @@ public class MessageTileEntityLRMB implements IMessage, IMessageHandler<MessageT
     }
     public MessageTileEntityLRMB(TileEntityLMRB TileEntityLMRB)
     {
-        this.x = TileEntityLMRB.xCoord;
-        this.y = TileEntityLMRB.yCoord;
-        this.z = TileEntityLMRB.zCoord;
+        this.x = TileEntityLMRB.getPos().getX();
+        this.y = TileEntityLMRB.getPos().getY();
+        this.z = TileEntityLMRB.getPos().getZ();
         this.orientation = (byte) TileEntityLMRB.getOrientation().ordinal();
         this.state = (byte) TileEntityLMRB.getState();
         this.customName = TileEntityLMRB.getCustomName();
@@ -55,8 +56,7 @@ public class MessageTileEntityLRMB implements IMessage, IMessageHandler<MessageT
     @Override
     public IMessage onMessage(MessageTileEntityLRMB message, MessageContext ctx)
     {
-        TileEntity tileEntity = FMLClientHandler.instance().getClient().theWorld.getTileEntity(message.x, message.y, message.z);
-        if (tileEntity instanceof TileEntityLMRB)
+        TileEntity tileEntity = FMLClientHandler.instance().getClient().theWorld.getTileEntity(BlockPos.ORIGIN);
         {
             ((TileEntityLMRB) tileEntity).setOrientation(message.orientation);
             ((TileEntityLMRB) tileEntity).setState(message.state);
