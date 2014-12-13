@@ -5,8 +5,8 @@ public class Blocktank extends BlockLMRB
     public Blocktank()
     {
         super();
-        this.setBlockName("flag");
-        this.setBlockTextureName("flag");
+        this.setUnlocalizedName("flag");
+ //       this.setBlockTextureName("flag");
     }
 }
 

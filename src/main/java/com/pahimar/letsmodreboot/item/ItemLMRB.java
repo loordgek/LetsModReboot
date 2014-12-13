@@ -3,6 +3,7 @@ package com.pahimar.letsmodreboot.item;
 import com.pahimar.letsmodreboot.creativetab.CreativeTabLMRB;
 import com.pahimar.letsmodreboot.reference.Reference;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 public class ItemLMRB extends Item
 {
@@ -20,11 +21,11 @@ public class ItemLMRB extends Item
         return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
     }
 
-//    @Override
-//    public String getUnlocalizedName(ItemStack itemStack)
-//    {
-//        return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
-//   }
+    @Override
+   public String getUnlocalizedName(ItemStack itemStack)
+    {
+       return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+  }
 
 //    @Override
 //   @SideOnly(Side.CLIENT)
