@@ -22,7 +22,7 @@ public class tinypile extends ItemLMRB{
     public tinypile(){
         super();
         this.setHasSubtypes(true);
-        this.setUnlocalizedName(Names.Items.tinypile);
+   //     this.setUnlocalizedName("tinypile");
 
 }
     public static List<ItemStack> gettinypile()

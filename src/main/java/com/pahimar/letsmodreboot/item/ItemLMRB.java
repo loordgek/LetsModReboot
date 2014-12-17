@@ -15,6 +15,7 @@ public class ItemLMRB extends Item
         this.setCreativeTab(CreativeTabLMRB.LMRB_TAB);
     }
 
+
     @Override
     public String getUnlocalizedName()
     {
@@ -27,16 +28,10 @@ public class ItemLMRB extends Item
        return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
   }
 
-//    @Override
-//   @SideOnly(Side.CLIENT)
-//    public void registeritemmodel(Modelhelper modelregister)
-//    {
-//        registeritemmodel(); = registeritemmodel(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
-//    }
-
     protected String getUnwrappedUnlocalizedName(String unlocalizedName)
     {
         return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
     }
+
 
 }

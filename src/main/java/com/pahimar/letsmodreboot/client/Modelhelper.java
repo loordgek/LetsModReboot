@@ -6,10 +6,13 @@ import net.minecraft.client.renderer.BlockModelShapes;
 import net.minecraft.client.renderer.ItemModelMesher;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * Created by stefan on 11-12-2014.
  */
+@SideOnly(Side.CLIENT)
 public class Modelhelper
 {
     public static void registerItem(Item item, int metadata, String itemName)

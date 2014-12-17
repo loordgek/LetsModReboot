@@ -2,7 +2,7 @@ package com.pahimar.letsmodreboot;
 
 import com.pahimar.letsmodreboot.handler.ConfigurationHandler;
 import com.pahimar.letsmodreboot.init.ModBlocks;
-import com.pahimar.letsmodreboot.proxy.CommonProxy;
+import com.pahimar.letsmodreboot.init.ModItems;
 import com.pahimar.letsmodreboot.proxy.IProxy;
 import com.pahimar.letsmodreboot.reference.Reference;
 import com.pahimar.letsmodreboot.utility.LogHelper;
@@ -21,8 +21,8 @@ public class LetsModReboot
     public static LetsModReboot instance;
 
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
+
     public static IProxy proxy;
-    public static CommonProxy comProxy;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
@@ -31,7 +31,7 @@ public class LetsModReboot
         FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
         LogHelper.info("Pre Initialization Complete!");
 
-    //    ModItems.init();
+        ModItems.init();
 
         ModBlocks.init();
     }
@@ -40,6 +40,9 @@ public class LetsModReboot
     public void init(FMLInitializationEvent event)
     {
         LogHelper.info("Initialization Complete!");
+
+        proxy.registerRenderers();
+        proxy.registeritemrenders();
     }
 
     @Mod.EventHandler

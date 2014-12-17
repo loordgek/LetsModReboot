@@ -1,4 +1,4 @@
-package com.pahimar.letsmodreboot.client.gui;
+package com.pahimar.letsmodreboot.client;
 
 import com.pahimar.letsmodreboot.client.ModGuiConfig;
 import net.minecraft.client.Minecraft;
