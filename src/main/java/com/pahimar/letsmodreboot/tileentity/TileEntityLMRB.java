@@ -1,7 +1,7 @@
 package com.pahimar.letsmodreboot.tileentity;
 
 
-    import com.pahimar.letsmodreboot.Network.Packethandler;
+import com.pahimar.letsmodreboot.Network.Packethandler;
 import com.pahimar.letsmodreboot.Network.message.MessageTileEntityLRMB;
 import com.pahimar.letsmodreboot.reference.Names;
 import net.minecraft.nbt.NBTTagCompound;

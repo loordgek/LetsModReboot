@@ -27,9 +27,9 @@ public class Modelhelper
     {
         registerBlock(block, 0, blockName);
     }
-    public static void registerItem(Item item, String itemName)
+    public static void registerItem(Item Item, String itemName)
     {
-        registerItem(item, 0, itemName);
+        registerItem(Item, 0, itemName);
     }
     public static ItemModelMesher getItemModelMesher()
     {
